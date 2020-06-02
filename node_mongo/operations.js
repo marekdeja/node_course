@@ -2,9 +2,9 @@ const assert = require('assert')
 
 exports.insertDocument = (db, document, collection, callback) => {
     const coll = db.collection(collection)
-    coll.insert(document, (err, result) => {
+    coll.insertOne(document, (err, result) => {
         assert.equal(err, null)
-        console.log("Inserte " + result.result.n + " documents into the collection")
+        console.log("Insert " + result.result.n + " documents into the collection")
         callback(result)
 
     })
